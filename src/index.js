@@ -5,15 +5,11 @@ import './index.css';
 import * as THREE from 'three';
 import App from "./App";
 import ControlsFactory from "./Rendering/ControlsFactory";
+import Dimensions from 'react-dimensions'
 
 class TestPreviewer extends React.Component {
-  constructor(props){
-    super(props);
 
-    this.state = {
-      cam: this.GetCamera()
-    }
-  }
+  state = {};
 
   GetCamera() {
     const aspectratio = this.props.viewWidth / this.props.viewHeight;
@@ -32,6 +28,8 @@ class TestPreviewer extends React.Component {
   updateCallBack = () => { this.controls.update(); };
 
   render() {
+    this.state.cam = this.GetCamera();
+
     return (
       <App
         height={this.props.viewHeight}
@@ -43,10 +41,22 @@ class TestPreviewer extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <TestPreviewer
-    viewHeight={500}
-    viewWidth={500}
-  />, document.getElementById('root'));
+class Supa extends React.Component {
+  render(){
+    const width = this.props.containerWidth;
+    const height = this.props.containerHeight;
+
+    return(
+      <TestPreviewer
+        viewHeight={500}
+        viewWidth={width}
+      />
+    )
+  }
+}
+
+var Sup = Dimensions()(Supa)
+
+ReactDOM.render(<Sup />, document.getElementById('root'));
 
 registerServiceWorker();
