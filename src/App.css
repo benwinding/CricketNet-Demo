@@ -23,6 +23,7 @@
 }
 
 .Render-View {
+  background-color: aqua;
   width: 99vw;
   height: 75vh;
 }

@@ -15,6 +15,8 @@ export default class NetWall extends React.Component {
     let geom2 = new THREE.PlaneGeometry(this.props.length, this.props.height, 1);
     geom2.translate(this.props.length/2,this.props.height/2,0);
     let geom = <planeGeometry
+        height={this.props.height}
+        width={this.props.length}
         vertices={geom2.vertices}
         faces={geom2.faces}
       />;
@@ -23,7 +25,7 @@ export default class NetWall extends React.Component {
     return (
       <mesh
         rotation = {new THREE.Euler(0,radsToRotate,0)}
-        position = {new THREE.Euler(this.props.x,0,this.props.y)}
+        position = {new THREE.Vector3(this.props.x,0,this.props.y)}
       >
         {geom}
         <meshBasicMaterial

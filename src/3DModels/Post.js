@@ -4,7 +4,7 @@ import * as THREE from 'three';
 export default class Post extends React.Component {
   render() {
     return <mesh
-      position = {new THREE.Euler(this.props.x,this.props.height/2,this.props.y)}
+      position = {new THREE.Vector3(this.props.x,this.props.height/2,this.props.y)}
     >
       <boxGeometry
         width={0.2}
