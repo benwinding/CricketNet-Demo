@@ -29,7 +29,7 @@ export default class NetWall extends React.Component {
       >
         {geom}
         <meshBasicMaterial
-          map = {this.GetTexture()}
+          map = {this.GetTexture(this.props.length, this.props.width)}
           side = {THREE.DoubleSide}
           transparent = {true}
           opacity = {0.5}
