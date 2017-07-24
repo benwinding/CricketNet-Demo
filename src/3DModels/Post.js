@@ -7,8 +7,8 @@ export default class Post extends React.Component {
       position = {new THREE.Euler(this.props.x,this.props.height/2,this.props.y)}
     >
       <boxGeometry
-        width={0.1}
-        depth={0.1}
+        width={0.2}
+        depth={0.2}
         height={this.props.height}
       />
       <meshBasicMaterial
