@@ -5,6 +5,7 @@ import NetWall from "./NetWall";
 import NetRoof from "./NetRoof";
 import Wire from "./Wire";
 import CricketLane from "./CricketLane";
+import Beam from "./Beam";
 
 export default class Main3DParts extends React.Component {
   render() {
@@ -12,10 +13,8 @@ export default class Main3DParts extends React.Component {
     return (
       <group>
         <Grass x={30} y={0} width={100} length={100} />
-        {/*End posts*/}
-        <Post x={0} y={-12} height={4}/>
+        {/*End post*/}
         <Post x={0} y={0} height={4}/>
-        <Post x={0} y={12} height={4}/>
         {/*Lonely post*/}
         <Post x={54} y={0} height={4}/>
         {/*Side posts*/}
@@ -46,6 +45,11 @@ export default class Main3DParts extends React.Component {
         <Wire x={16} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={24} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
 
+        {/*Side Beams*/}
+        <Beam x={0} y={-24} z={4-0.1} length={24}/>
+        <Beam x={0} y={24} z={4-0.1} length={24}/>
+
+        {/*Side Beams*/}
         <CricketLane x={2} y={9}/>
         <CricketLane x={2} y={3}/>
         <CricketLane x={2} y={-3}/>
