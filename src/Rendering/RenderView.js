@@ -12,14 +12,18 @@ export default class RenderView extends React.Component {
     this.InitWalls();
 
     this.clock = new THREE.Clock();
+    this.mult = 1;
 
     this.onAnimate = () => {
-      let delta = this.clock.getDelta()*2;
-
+      let delta = this.clock.getDelta();
+      if((this.state.w1 + delta*3) > 36)
+        this.mult = -1;
+      if((this.state.w1 - delta*3) < 0)
+        this.mult = 1;
       this.setState({
-        w1: (this.state.w1 + delta*3) % 36,
-        w2: (this.state.w2 + delta*2) % 24,
-        w3: (this.state.w3 + delta*1) % 12,
+        w1: (this.state.w1 + this.mult*delta*3) % 36,
+        w2: (this.state.w2 + this.mult*delta*2) % 24,
+        w3: (this.state.w3 + this.mult*delta) % 12,
       });
 
       // we will get this callback every frame
