@@ -1,16 +1,15 @@
 import React from 'react';
 import * as THREE from 'three';
 
-export default class Posts extends React.Component {
+export default class Post extends React.Component {
   render() {
     return <mesh
-      rotation = {new THREE.Euler(-Math.PI / 2,0,0)}
-      position = {new THREE.Euler(0,1,0)}
+      position = {new THREE.Euler(this.props.x,this.props.height/2,this.props.y)}
     >
       <boxGeometry
         width={0.1}
-        depth={2}
-        height={0.1}
+        depth={0.1}
+        height={this.props.height}
       />
       <meshBasicMaterial
         color = "black"

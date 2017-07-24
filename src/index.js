@@ -17,19 +17,19 @@ class TestPreviewer extends React.Component {
     let cameraProps = {
       ref:"refCam",
       name:"maincamera",
-      fov: 75, aspect: aspectratio,
-      near: 0.1, far: 10000,
-      position: new THREE.Vector3(200, 200, 200),
+      fov: 90, aspect: aspectratio,
+      near: 0.01, far: 1000,
+      position: new THREE.Vector3(10, 10, 10),
       lookAt: new THREE.Vector3(0, 0, 0)
     };
     return <perspectiveCamera {...cameraProps} />;
   }
 
-  componentDidMount() { this.controls = ControlsFactory.GetControls(this.refs.refCam); }
-  updateCallBack = () => { this.controls.update(); };
+  componentDidMount() { this.state.controls = ControlsFactory.GetControls(this.refs.refCam); }
+  updateCallBack = () => { this.state.controls.update(); };
 
   render() {
-    this.setState({cam: this.GetCamera()});
+    this.state.cam = this.GetCamera();
 
     return (
       <App
