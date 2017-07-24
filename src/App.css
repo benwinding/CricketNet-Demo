@@ -9,8 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 24vh;
   color: white;
 }
 
@@ -21,4 +20,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.Render-View {
+  width: 100vw;
+  height: 75vh;
 }
