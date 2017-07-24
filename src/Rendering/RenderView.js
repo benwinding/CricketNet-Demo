@@ -10,12 +10,11 @@ export default class RenderView extends React.Component {
 
   render() {
     return (<React3
-      id="hello"
       mainCamera="maincamera"
       width={this.props.width}
       height={this.props.height}
       clearAlpha={0}
-      alpha={1}
+      alpha={true}
       onAnimate={this.onAnimate}
     >
       <scene>
