@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import logo from './logo.svg';
 import * as THREE from 'three';
 import App from "./App";
 import ControlsFactory from "./Rendering/ControlsFactory";
@@ -48,7 +49,7 @@ class Supa extends React.Component {
 
     return(
       <TestPreviewer
-        viewHeight={500}
+        viewHeight={height}
         viewWidth={width}
       />
     )
@@ -57,6 +58,16 @@ class Supa extends React.Component {
 
 var Sup = Dimensions()(Supa)
 
-ReactDOM.render(<Sup />, document.getElementById('root'));
+ReactDOM.render(
+  <div className="App">
+    <div className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h2>Quin's Sports Nets</h2>
+    </div>
+    <div className="Render-View">
+      <Sup />
+    </div>
+  </div>
+  , document.getElementById('root'));
 
 registerServiceWorker();
