@@ -4,6 +4,7 @@ import Post from "./Post";
 import NetWall from "./NetWall";
 import NetRoof from "./NetRoof";
 import Wire from "./Wire";
+import CricketLane from "./CricketLane";
 
 export default class Main3DParts extends React.Component {
   render() {
@@ -36,7 +37,7 @@ export default class Main3DParts extends React.Component {
         <NetWall x={0} y={0} height={4} length={24} rotate={0}/>
         <NetWall x={0} y={12} height={4} length={24} rotate={0}/>
         {/*Roof*/}
-        <NetRoof x={0} y={24} z={4} length={48} height={24} rotate={-90} />
+        <NetRoof x={0} y={24} z={4} height={24} length={48} rotate={-90} />
         {/*Long Wire*/}
         <Wire x={0} y={0} z={4} length={54} size={wireSize} rotate={-90}/>
         {/*Side Wires*/}
@@ -44,6 +45,11 @@ export default class Main3DParts extends React.Component {
         <Wire x={8} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={16} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={24} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
+
+        <CricketLane x={2} y={9}/>
+        <CricketLane x={2} y={3}/>
+        <CricketLane x={2} y={-3}/>
+        <CricketLane x={2} y={-9}/>
       </group>
     )
   }
