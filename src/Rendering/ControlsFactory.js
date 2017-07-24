@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import OrbitControls from 'three-orbit-controls';
+
+const OrbitControls = require('three-orbit-controls')(THREE);
 
 export default class ControlsFactory {
   static GetControls(refCamera){

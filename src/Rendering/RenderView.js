@@ -1,38 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
 import React3 from 'react-three-renderer';
-import * as THREE from 'three';
-import Dimensions from 'react-dimensions'
-import Grass from "./3DGrass";
-import Posts from "./3DPosts";
 
-class RenderView extends Component {
+export default class RenderView extends React.Component {
+  onAnimate = () => {
+    // we will get this callback every frame
+    if(this.props.updateCallBack !== null)
+      this.props.updateCallBack();
+  };
 
   render() {
-    const width = this.props.containerWidth;
-    const height = this.props.containerHeight;
-
+    //this.cam.name = "maincamera";
     return (<React3
-      mainCamera="camera"
-      width={width}
-      height={height}
+      id="hello"
+      mainCamera="maincamera"
+      width={this.props.width}
+      height={this.props.height}
+      clearColor={0xf5f9ff}
+      onAnimate={this.onAnimate}
     >
       <scene>
-        <perspectiveCamera
-          ref="refCam"
-          name="camera"
-          fov={75}
-          aspect={width / height}
-          near={0.1}
-          far={1000}
-
-          position={new THREE.Vector3(1,2,2)}
-          lookAt={new THREE.Vector3(0,0,0)}
-        />
-        <Grass />
-        <Posts />
+        {this.props.children}
       </scene>
     </React3>);
   }
 }
-
-export default Dimensions()(RenderView)

@@ -10,7 +10,7 @@ class Grass extends React.Component {
     texture.anisotropy = 5;
     return texture;
   }
-  
+
   render() {
     return <mesh
       rotation = {new THREE.Euler(-Math.PI / 2,0,0)}
