@@ -73,6 +73,7 @@ ReactDOM.render(
             <div className="App-title">
               <h2>Quin's Sports Nets</h2>
               <h4>Cricket Lane System</h4>
+              <i>[Click and drag to move the 3D model]</i>
             </div>
           </Col>
         </Row>
