@@ -29,6 +29,10 @@ export default class Main3DParts extends React.Component {
         {/*Side walls*/}
         <NetWall x={0} y={24} height={4} length={24} rotate={0}/>
         <NetWall x={0} y={-24} height={4} length={24} rotate={0}/>
+        {/*Center walls*/}
+        <NetWall x={0} y={-12} height={4} length={24} rotate={0}/>
+        <NetWall x={0} y={0} height={4} length={24} rotate={0}/>
+        <NetWall x={0} y={12} height={4} length={24} rotate={0}/>
         {/*Roof*/}
         <NetRoof x={0} y={24} height={4} length={48} width={24} rotate={-90} />
       </group>
