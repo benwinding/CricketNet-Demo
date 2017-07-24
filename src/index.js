@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import App from "./App";
 import ControlsFactory from "./Rendering/ControlsFactory";
 import Dimensions from 'react-dimensions'
+import {Col, Grid, Row} from "react-bootstrap";
 
 class TestPreviewer extends React.Component {
 
@@ -17,7 +18,7 @@ class TestPreviewer extends React.Component {
     let cameraProps = {
       ref:"refCam",
       name:"maincamera",
-      fov: 90, aspect: aspectratio,
+      fov: 70, aspect: aspectratio,
       near: 0.01, far: 500,
       position: new THREE.Vector3(50, 15, 0),
       lookAt: new THREE.Vector3(0, 0, 0)
@@ -61,8 +62,21 @@ var Sup = Dimensions()(Supa)
 ReactDOM.render(
   <div className="App">
     <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h3>Quin's Sports Nets</h3>
+      <Grid>
+        <Row>
+          <Col xs={3}>
+            <div className="App-logo">
+              <img src={logo} alt="logo" />
+            </div>
+          </Col>
+          <Col xs={9}>
+            <div className="App-title">
+              <h2>Quin's Sports Nets</h2>
+              <h4>Cricket Lane System</h4>
+            </div>
+          </Col>
+        </Row>
+      </Grid>
     </div>
     <div className="Render-View">
       <Sup />
