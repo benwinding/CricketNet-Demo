@@ -18,7 +18,7 @@ class TestPreviewer extends React.Component {
       ref:"refCam",
       name:"maincamera",
       fov: 90, aspect: aspectratio,
-      near: 0.01, far: 1000,
+      near: 0.01, far: 500,
       position: new THREE.Vector3(50, 15, 0),
       lookAt: new THREE.Vector3(0, 0, 0)
     };

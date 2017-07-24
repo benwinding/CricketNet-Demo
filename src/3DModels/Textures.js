@@ -1,12 +1,16 @@
+import * as React from "react";
 import * as THREE from 'three';
 
 export class Textures {
   static GetTexture(L,H,s,loc) {
-    const texture = new THREE.TextureLoader().load(loc);
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set( L*s,H*s );
-    texture.anisotropy = 5;
-    return texture;
+    return(
+      <texture
+        url={loc}
+        wrapS={THREE.RepeatWrapping}
+        wrapT={THREE.RepeatWrapping}
+        anisotropy={5}
+        repeat={new THREE.Vector2(L*s,H*s)}
+      />
+    );
   }
 }

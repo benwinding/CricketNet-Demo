@@ -49,7 +49,6 @@ export default class CricketLane extends React.Component {
 
     let x = this.props.x;
     let y = this.props.y;
-    let z = this.props.z;
 
     return (
       <group

@@ -21,12 +21,13 @@ export default class NetRoof extends React.Component {
       >
         {geom}
         <meshBasicMaterial
-          map = {Textures.GetTexture(this.props.length, this.props.height, 1, "textures/net-pattern.png")}
-          // color = {"black"}
+          //color = {"black"}
           side = {THREE.DoubleSide}
           transparent = {true}
           opacity = {0.5}
-        />
+        >
+          {Textures.GetTexture(this.props.length, this.props.height, 1, "textures/net-pattern.png")}
+        </meshBasicMaterial>
       </mesh>
     )
   }

@@ -13,9 +13,10 @@ class Grass extends React.Component {
         height={this.props.length}
       />
       <meshBasicMaterial
-        map = {Textures.GetTexture(this.props.length, this.props.width,0.1,"textures/grass.jpg")}
         side = {THREE.DoubleSide}
-      />
+      >
+        {Textures.GetTexture(this.props.length, this.props.width,0.1,"textures/grass.jpg")}
+      </meshBasicMaterial>
     </mesh>
   }
 }

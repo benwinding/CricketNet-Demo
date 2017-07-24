@@ -21,11 +21,13 @@ export default class NetWall extends React.Component {
       >
         {geom}
         <meshBasicMaterial
-          map = {Textures.GetTexture(this.props.length, this.props.width, 1, "textures/net-pattern.png")}
+          //color = {"black"}
           side = {THREE.DoubleSide}
           transparent = {true}
           opacity = {0.5}
-        />
+        >
+          {Textures.GetTexture(this.props.length, this.props.width, 1, "textures/net-pattern.png")}
+        </meshBasicMaterial>
       </mesh>
     )
   }

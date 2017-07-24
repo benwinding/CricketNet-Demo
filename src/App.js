@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import RenderView from "./Rendering/RenderView";
-import Main3DParts from "./3DModels/_Main";
 
 class App extends Component {
   render() {
@@ -12,7 +11,6 @@ class App extends Component {
         updateCallBack={this.props.updateCallBack}
       >
         {this.props.cam}
-        <Main3DParts />
       </RenderView>
     );
   }
