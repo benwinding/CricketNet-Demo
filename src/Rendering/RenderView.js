@@ -3,6 +3,7 @@ import React3 from 'react-three-renderer';
 import * as THREE from 'three';
 import Dimensions from 'react-dimensions'
 import Grass from "./3DGrass";
+import Posts from "./3DPosts";
 
 class RenderView extends Component {
 
@@ -27,21 +28,8 @@ class RenderView extends Component {
           position={new THREE.Vector3(1,2,2)}
           lookAt={new THREE.Vector3(0,0,0)}
         />
-        <Grass/>
-        <mesh
-          rotation={new THREE.Vector3(0,0,0)}
-          position={new THREE.Vector3(0,1,0)}
-        >
-          <boxGeometry
-            width={1}
-            height={1}
-            depth={1}
-          />
-          <meshBasicMaterial
-            color={0x00ff00}
-          />
-
-        </mesh>
+        <Grass />
+        <Posts />
       </scene>
     </React3>);
   }
