@@ -2,11 +2,11 @@ import React from 'react';
 import * as THREE from 'three';
 
 export default class NetWall extends React.Component {
-  GetTexture(){
+  GetTexture(L,W){
     const texture = new THREE.TextureLoader().load("textures/net-pattern.png");
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set( 10, 1 );
+    texture.repeat.set( L, W );
     texture.anisotropy = 5;
     return texture;
   }
@@ -28,7 +28,6 @@ export default class NetWall extends React.Component {
         {geom}
         <meshBasicMaterial
           map = {this.GetTexture()}
-          // color = {"black"}
           side = {THREE.DoubleSide}
           transparent = {true}
           opacity = {0.5}
