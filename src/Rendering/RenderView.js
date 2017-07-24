@@ -14,7 +14,8 @@ export default class RenderView extends React.Component {
       mainCamera="maincamera"
       width={this.props.width}
       height={this.props.height}
-      clearColor={0xf5f9ff}
+      clearAlpha={0}
+      alpha={1}
       onAnimate={this.onAnimate}
     >
       <scene>

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import logo from './logo.svg';
+import logo from './logo-quins-nets.png';
 import * as THREE from 'three';
 import App from "./App";
 import ControlsFactory from "./Rendering/ControlsFactory";
@@ -62,7 +62,7 @@ ReactDOM.render(
   <div className="App">
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2>Quin's Sports Nets</h2>
+      <h3>Quin's Sports Nets</h3>
     </div>
     <div className="Render-View">
       <Sup />
