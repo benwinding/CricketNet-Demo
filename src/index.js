@@ -29,7 +29,7 @@ class TestPreviewer extends React.Component {
   updateCallBack = () => { this.controls.update(); };
 
   render() {
-    this.state.cam = this.GetCamera();
+    this.setState({cam: this.GetCamera()});
 
     return (
       <App
