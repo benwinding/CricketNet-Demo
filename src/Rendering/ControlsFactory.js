@@ -12,8 +12,8 @@ export default class ControlsFactory {
     controls.dampingFactor = 0.1;
     controls.rotateSpeed = 0.1;
     controls.minDistance = 10;
-    controls.maxDistance = 999;
-    controls.maxPolarAngle = THREE.Math.degToRad(90);
+    controls.maxDistance = 100;
+    controls.maxPolarAngle = THREE.Math.degToRad(88);
     return controls;
   }
 }
