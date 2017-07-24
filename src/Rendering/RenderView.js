@@ -9,7 +9,6 @@ export default class RenderView extends React.Component {
   };
 
   render() {
-    //this.cam.name = "maincamera";
     return (<React3
       id="hello"
       mainCamera="maincamera"

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RenderView from "./Rendering/RenderView";
-import {Parts3D} from "./3DModels/_Main";
+import Main3DParts from "./3DModels/_Main";
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
             updateCallBack={this.props.updateCallBack}
           >
             {this.props.cam}
-            <Parts3D />
+            <Main3DParts />
           </RenderView>
           <pre>
             Click and drag to rotate the shed

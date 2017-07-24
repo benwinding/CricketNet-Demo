@@ -1,7 +1,7 @@
 import React from 'react';
 import Grass from "./Grass";
 
-export class Parts3D extends React.Component {
+export default class Main3DParts extends React.Component {
   render() {
     return (
       <group>
