@@ -1,5 +1,4 @@
 import React from 'react';
-import Grass from "./Grass";
 import Post from "./Post";
 import NetWall from "./NetWall";
 import NetRoof from "./NetRoof";
@@ -12,7 +11,6 @@ export default class Main3DParts extends React.Component {
     let wireSize = 0.03;
     return (
       <group>
-        <Grass x={30} y={0} width={100} length={100} />
         {/*End post*/}
         <Post x={0} y={0} height={4}/>
         {/*Side posts*/}

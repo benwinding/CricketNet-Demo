@@ -3,6 +3,7 @@ import React3 from 'react-three-renderer';
 import Main3DParts from "../3DModels/_Main";
 import NetWall from "../3DModels/NetWall";
 import * as THREE from "three";
+import Grass from "../3DModels/Grass";
 
 export default class RenderView extends React.Component {
 
@@ -44,8 +45,8 @@ export default class RenderView extends React.Component {
   render() {
     return (<React3
       mainCamera="maincamera"
-      width={this.props.width}
-      height={this.props.height}
+      width={this.props.width/2}
+      height={this.props.height/2}
       clearAlpha={0}
       alpha={true}
       onAnimate={this.onAnimate}
@@ -55,11 +56,13 @@ export default class RenderView extends React.Component {
         <group
           position={new THREE.Vector3(-10,0,0)}
         >
+          <Grass x={30} y={0} width={100} length={100} />
+          <Main3DParts/>
+
           {/*Center walls*/}
           <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0}/>
           <NetWall x={0} y={this.state.w2} height={4} length={24} rotate={0}/>
           <NetWall x={0} y={this.state.w3+12} height={4} length={24} rotate={0}/>
-          <Main3DParts/>
         </group>
       </scene>
     </React3>);
