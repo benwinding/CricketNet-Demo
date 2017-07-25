@@ -26,7 +26,7 @@ export default class NetRoof extends React.Component {
           transparent = {true}
           opacity = {0.5}
         >
-          {Textures.GetTexture(this.props.length, this.props.height, 1, "textures/net-pattern.png")}
+          {Textures.GetTexture(this.props.length, this.props.height, 0.5, "textures/net-pattern.png")}
         </meshBasicMaterial>
       </mesh>
     )

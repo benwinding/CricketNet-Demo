@@ -18,7 +18,7 @@ export default class RenderView extends React.Component {
       let delta = this.clock.getDelta();
       if((this.state.w1 + delta*3) > 36)
         this.mult = -1;
-      if((this.state.w1 - delta*3) < 0)
+      else if((this.state.w1 - delta*3) < 0)
         this.mult = 1;
       this.setState({
         w1: (this.state.w1 + this.mult*delta*3) % 36,
@@ -52,11 +52,15 @@ export default class RenderView extends React.Component {
     >
       <scene>
         {this.props.children}
-        {/*Center walls*/}
-        <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0}/>
-        <NetWall x={0} y={this.state.w2} height={4} length={24} rotate={0}/>
-        <NetWall x={0} y={this.state.w3+12} height={4} length={24} rotate={0}/>
-        <Main3DParts/>
+        <group
+          position={new THREE.Vector3(-10,5,0)}
+        >
+          {/*Center walls*/}
+          <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0}/>
+          <NetWall x={0} y={this.state.w2} height={4} length={24} rotate={0}/>
+          <NetWall x={0} y={this.state.w3+12} height={4} length={24} rotate={0}/>
+          <Main3DParts/>
+        </group>
       </scene>
     </React3>);
   }

@@ -26,7 +26,7 @@ export default class NetWall extends React.Component {
           transparent = {true}
           opacity = {0.5}
         >
-          {Textures.GetTexture(this.props.length, this.props.width, 1, "textures/net-pattern.png")}
+          {Textures.GetTexture(this.props.length, this.props.width, 0.5, "textures/net-pattern.png")}
         </meshBasicMaterial>
       </mesh>
     )
