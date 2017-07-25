@@ -53,7 +53,7 @@ export default class RenderView extends React.Component {
       <scene>
         {this.props.children}
         <group
-          position={new THREE.Vector3(-10,5,0)}
+          position={new THREE.Vector3(-10,0,0)}
         >
           {/*Center walls*/}
           <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0}/>
