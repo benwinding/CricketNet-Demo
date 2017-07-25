@@ -15,7 +15,7 @@ export default class RenderView extends React.Component {
     this.mult = 1;
 
     this.onAnimate = () => {
-      let delta = this.clock.getDelta();
+      let delta = this.clock.getDelta()*3;
       if((this.state.w1 + delta*3) > 36)
         this.mult = -1;
       else if((this.state.w1 - delta*3) < 0)

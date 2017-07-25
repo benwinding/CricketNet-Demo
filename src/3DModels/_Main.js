@@ -15,8 +15,6 @@ export default class Main3DParts extends React.Component {
         <Grass x={30} y={0} width={100} length={100} />
         {/*End post*/}
         <Post x={0} y={0} height={4}/>
-        {/*Lonely post*/}
-        <Post x={54} y={0} height={4}/>
         {/*Side posts*/}
         <Post x={0} y={-24} height={4}/>
         <Post x={8} y={-24} height={4}/>
@@ -33,13 +31,16 @@ export default class Main3DParts extends React.Component {
         <NetWall x={0} y={-24} height={4} length={24} rotate={0}/>
         {/*Roof*/}
         <NetRoof x={0} y={24} z={4} height={24} length={48} rotate={-90} />
-        {/*Long Wire*/}
-        <Wire x={0} y={0} z={4} length={54} size={wireSize} rotate={-90}/>
         {/*Side Wires*/}
         <Wire x={0} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={8} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={16} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
         <Wire x={24} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
+
+        {/*Extra 3 Wires*/}
+        <Wire x={4} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
+        <Wire x={12} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
+        <Wire x={20} y={-24} z={4} length={48} size={wireSize} rotate={0}/>
 
         {/*Side Beams*/}
         <Beam x={0} y={-24} z={4-0.1} length={24}/>
