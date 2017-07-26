@@ -16,7 +16,7 @@ export default class RenderView extends React.Component {
     this.mult = 1;
 
     this.onAnimate = () => {
-      let delta = this.clock.getDelta()*3;
+      let delta = this.clock.getDelta()*2;
       if((this.state.w1 + delta*3) > 36)
         this.mult = -1;
       else if((this.state.w1 - delta*3) < 0)
@@ -43,10 +43,12 @@ export default class RenderView extends React.Component {
   }
 
   render() {
+    const wallOpacity = 0.5;
+
     return (<React3
       mainCamera="maincamera"
-      width={this.props.width/2}
-      height={this.props.height/2}
+      width={this.props.width}
+      height={this.props.height}
       clearAlpha={0}
       alpha={true}
       onAnimate={this.onAnimate}
@@ -60,9 +62,9 @@ export default class RenderView extends React.Component {
           <Main3DParts/>
 
           {/*Center walls*/}
-          <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0}/>
-          <NetWall x={0} y={this.state.w2} height={4} length={24} rotate={0}/>
-          <NetWall x={0} y={this.state.w3+12} height={4} length={24} rotate={0}/>
+          <NetWall x={0} y={this.state.w1-12} height={4} length={24} rotate={0} trans={wallOpacity}/>
+          <NetWall x={0} y={this.state.w2} height={4} length={24} rotate={0} trans={wallOpacity}/>
+          <NetWall x={0} y={this.state.w3+12} height={4} length={24} rotate={0} trans={wallOpacity}/>
         </group>
       </scene>
     </React3>);

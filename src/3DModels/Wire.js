@@ -3,23 +3,35 @@ import * as THREE from 'three';
 
 export default class Wire extends React.Component {
   render() {
-    let geom2 = new THREE.CylinderGeometry(this.props.size,this.props.size,this.props.length, 8);
-    geom2.translate(0,this.props.length/2,0);
-    let geom = <cylinderGeometry
-      vertices={geom2.vertices}
-      faces={geom2.faces}
-    />;
-
     let radsToRotate = THREE.Math.degToRad(this.props.rotate);
     return (
-      <mesh
+      <group
         rotation = {new THREE.Euler(THREE.Math.degToRad(90),0,radsToRotate)}
         position = {new THREE.Vector3(this.props.x,this.props.z,this.props.y)}
       >
-        {geom}
+        <WireBase
+          height={this.props.length}
+          size={this.props.size}
+        />
+      </group>
+    )
+  }
+}
+
+class WireBase extends React.Component {
+  render() {
+    return (
+      <mesh
+        position = {new THREE.Vector3(this.props.size/2,this.props.height/2,0)}
+      >
+        <cylinderGeometry
+          radiusTop={this.props.size}
+          radiusBottom={this.props.size}
+          height={this.props.height}
+          radialSegments={8}
+        />
         <meshBasicMaterial
-          color = {0x333333}
-          side = {THREE.DoubleSide}
+          color = {0x000000}
         />
       </mesh>
     )

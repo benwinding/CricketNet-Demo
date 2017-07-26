@@ -4,29 +4,39 @@ import {Textures} from "./Textures";
 
 export default class NetRoof extends React.Component {
   render() {
-    let geom2 = new THREE.PlaneGeometry(this.props.length, this.props.height, 1);
-    geom2.translate(this.props.length/2,this.props.height/2,0);
-    let geom = <planeGeometry
-        height={this.props.length}
-        width={this.props.height}
-        vertices={geom2.vertices}
-        faces={geom2.faces}
-      />;
-
     let radsToRotate = THREE.Math.degToRad(this.props.rotate);
     return (
-      <mesh
+      <group
         rotation = {new THREE.Euler(THREE.Math.degToRad(90),0,radsToRotate)}
         position = {new THREE.Vector3(this.props.x,this.props.z,this.props.y)}
       >
-        {geom}
+        <RoofBase
+          trans={this.props.trans}
+          height={this.props.height}
+          width={this.props.length}
+        />
+      </group>
+    )
+  }
+}
+
+class RoofBase extends React.Component {
+  render() {
+    return (
+      <mesh
+        position = {new THREE.Vector3(this.props.width/2,this.props.height/2,0)}
+      >
+        <planeGeometry
+          height={this.props.height}
+          width={this.props.width}
+        />
         <meshBasicMaterial
-          //color = {"black"}
           side = {THREE.DoubleSide}
           transparent = {true}
-          opacity = {0.5}
+          opacity = {this.props.trans}
+          depthWrite={false}
         >
-          {Textures.GetTexture(this.props.length, this.props.height, 0.5, "textures/net-pattern.png")}
+          {Textures.GetTexture(this.props.width, this.props.height, 0.5, "textures/net-pattern.png")}
         </meshBasicMaterial>
       </mesh>
     )

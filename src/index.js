@@ -9,7 +9,18 @@ import ControlsFactory from "./Rendering/ControlsFactory";
 import Dimensions from 'react-dimensions'
 import {Col, Grid, Row} from "react-bootstrap";
 
+import Stats from 'stats.js';
+
 class TestPreviewer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.stats = new Stats();
+
+    this.stats.domElement.style.position = 'absolute';
+    this.stats.domElement.style.top = '0px';
+  }
+
 
   state = {};
 
