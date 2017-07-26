@@ -11,8 +11,6 @@ export default class Main3DParts extends React.Component {
     let wireSize = 0.03;
     return (
       <group>
-        <Post x={0} y={0} height={4}/>
-
         <Post x={0} y={-24} height={4}/>
         <Post x={8} y={-24} height={4}/>
         <Post x={16} y={-24} height={4}/>
