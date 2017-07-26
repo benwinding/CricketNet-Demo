@@ -26,6 +26,9 @@
   font-size: 3vh;
 }
 
+.App-title i {
+  font-size: 2vh;
+}
 
 .App-intro {
   font-size: large;
