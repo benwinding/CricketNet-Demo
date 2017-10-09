@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "create-react-app": "^1.4.1",
     "gh-pages": "^1.0.0",
     "react": "15.5.3",
     "react-bootstrap": "^0.31.1",
