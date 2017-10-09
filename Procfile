@@ -1,1 +1,1 @@
-web: PORT=$PORT react-scripts start
+web: yarn start
